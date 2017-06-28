@@ -1,0 +1,13 @@
+direc = './spectra'
+from spectra_df import spectra_df
+fspec, pspec = spectra_df(direc)
+
+
+import matplotlib.pyplot as plt
+%matplotlib nbagg
+plt.plot(fspec['wl'], fspec[fspec.columns[1]])
+plt.plot(pspec['wl'], pspec[pspec.columns[1]])
+
+from plot_spectrum import plot_spectrum
+
+plot_spectrum(fspec, pspec)
